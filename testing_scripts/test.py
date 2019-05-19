@@ -37,7 +37,7 @@ for i in range(2,len(gt)):
     gr = gt[i-2:i+1]
     abc = gr[2]
     gray = cv2.cvtColor((abc*255.0).astype(np.uint8), cv2.COLOR_BGR2GRAY)/255.0
-    inpu = np.stack((preds[0][:,:,0],preds[0][:,:,1],preds[0][:,:,2],preds[1][:,:,0],preds[1][:,:,1],preds[1][:,:,2],gray), axis=-1)
+    inpu = np.stack((preds[i-2][:,:,0],preds[i-2][:,:,1],preds[i-2][:,:,2],preds[i-1][:,:,0],preds[i-1][:,:,1],preds[i-1][:,:,2],gray), axis=-1)
     # inpu_1 = gray.reshape((360, 480, 1))
     # input_1_list = np.array([inpu_1],dtype=float)
     input_list = np.array([inpu], dtype=float)

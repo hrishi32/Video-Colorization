@@ -30,7 +30,8 @@ for i in range(2000):
 gt = np.array(gt)
 
 preds = np.copy(gt)
-abc = preds
+preds[0].fill(0.0)
+preds[1].fill(0.0)
 
 for i in range(2,len(gt)):
     if i%20==0: print(i)
